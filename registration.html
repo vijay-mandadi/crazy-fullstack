@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration</title>
+  </head>
+
+  <body>
+    <input type="text" name="name" id="name" />
+    <select id="gender">
+      <option value="">--</option>
+      <option value="male">M</option>
+      <option value="female">F</option>
+    </select>
+    <input type="text" name="email" id="email" />
+    <input type="text" name="mobile" id="mobile" />
+    <hr />
+    <h1 id="dName"></h1>
+    <h2 id="dGender"></h2>
+    <h3 id="dEmail"></h3>
+    <h4 id="dMobile"></h4>
+    <hr />
+    <button onclick="showName()">NAME</button>
+    <button onclick="showGender()">GENDER</button>
+    <button onclick="showEmail()">EMAIL</button>
+    <button onclick="showMobile()">MOBILE</button>
+    <button onclick="resetForm()">RESET FORM</button>
+    <button onclick="resetDisplay()">RESET DISPLAY</button>
+    <script type="text/javascript">
+      function showName() {
+        var nameInput = document.getElementById("name");
+        var displayName = document.getElementById("dName");
+        displayName.textContent = nameInput.value;
+      }
+
+      function showGender() {
+        var genderSelect = document.getElementById("gender");
+        var displayGender = document.getElementById("dGender");
+        displayGender.textContent =
+          genderSelect.options[genderSelect.selectedIndex].text;
+      }
+
+      function showEmail() {
+        var emailInput = document.getElementById("email");
+        var displayEmail = document.getElementById("dEmail");
+        displayEmail.textContent = emailInput.value;
+      }
+
+      function showMobile() {
+        var mobileInput = document.getElementById("mobile");
+        var displayMobile = document.getElementById("dMobile");
+        displayMobile.textContent = mobileInput.value;
+      }
+
+      function resetForm() {
+        document.getElementById("name").value = "";
+        document.getElementById("gender").selectedIndex = "--";
+        document.getElementById("email").value = "";
+        document.getElementById("mobile").value = "";
+      }
+
+      function resetDisplay() {
+        document.getElementById("dName").textContent = "";
+        document.getElementById("dGender").textContent = "";
+        document.getElementById("dEmail").textContent = "";
+        document.getElementById("dMobile").textContent = "";
+      }
+    </script>
+  </body>
+</html>
